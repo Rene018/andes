@@ -67,7 +67,11 @@ export function CatalogPage() {
         <div>
           <p className="text-clay-500 text-xs font-semibold uppercase tracking-widest mb-1.5">Tienda</p>
           <h1 className="font-display text-3xl font-bold text-espresso">Catálogo de productos</h1>
-          <p className="text-warm-600 text-sm mt-1">{filtered.length} de {products.length} productos</p>
+          <p className="text-warm-600 text-sm mt-1">
+            {filtered.length < products.length
+              ? `${filtered.length} de ${products.length} productos`
+              : `${products.length} productos`}
+          </p>
         </div>
         <button
           onClick={() => setSidebarOpen(true)}

@@ -8,18 +8,32 @@ export function useProducts() {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    supabase
-      .from('products')
-      .select('*')
-      .order('name')
-      .then(({ data, error: err }) => {
-        if (err) {
-          setError(err.message)
-        } else {
-          setProducts((data || []).map(mapProduct))
-        }
-        setLoading(false)
-      })
+    let cancelled = false
+
+    function fetchAll() {
+      return supabase
+        .from('products')
+        .select('*')
+        .order('name')
+        .then(({ data, error: err }) => {
+          if (cancelled) return
+          if (err) setError(err.message)
+          else setProducts((data || []).map(mapProduct))
+          setLoading(false)
+        })
+    }
+
+    fetchAll()
+
+    const channel = supabase
+      .channel('products-changes')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'products' }, fetchAll)
+      .subscribe()
+
+    return () => {
+      cancelled = true
+      supabase.removeChannel(channel)
+    }
   }, [])
 
   return { products, loading, error }

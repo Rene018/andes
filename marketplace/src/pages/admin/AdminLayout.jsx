@@ -1,5 +1,5 @@
 import { NavLink, Outlet, Navigate, Link } from 'react-router-dom'
-import { LayoutDashboard, Package, ClipboardList, ArrowLeft, Store } from 'lucide-react'
+import { LayoutDashboard, Package, ClipboardList, ArrowLeft, Store, MessageCircle } from 'lucide-react'
 import { useAuth } from '../../context/AuthContext'
 import { Spinner } from '../../components/ui/Spinner'
 
@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { to: '/admin/productos', label: 'Productos', Icon: Store },
   { to: '/admin/inventario', label: 'Inventario', Icon: Package },
   { to: '/admin/solicitudes', label: 'Solicitudes', Icon: ClipboardList },
+  { to: '/admin/contacto', label: 'Contacto', Icon: MessageCircle },
 ]
 
 export function AdminLayout() {

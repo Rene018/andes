@@ -31,6 +31,19 @@ export function Navbar() {
             Catálogo
           </NavLink>
 
+          <NavLink
+            to="/contacto"
+            className={({ isActive }) =>
+              `text-sm font-medium px-3 py-1.5 rounded-lg transition-colors ${
+                isActive
+                  ? 'bg-clay-50 text-clay-600'
+                  : 'text-warm-600 hover:text-espresso hover:bg-warm-100'
+              }`
+            }
+          >
+            Comunícame
+          </NavLink>
+
           {/* Cart — oculto para administradores */}
           {!isAdmin && (
             <Link

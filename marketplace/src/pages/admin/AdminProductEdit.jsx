@@ -32,6 +32,12 @@ function toSlug(name) {
     .replace(/^_|_$/g, '')
 }
 
+function safeFilename(name) {
+  const ext = name.includes('.') ? name.slice(name.lastIndexOf('.')) : ''
+  const base = name.slice(0, name.length - ext.length)
+  return base.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-zA-Z0-9._-]/g, '_').replace(/_+/g, '_').replace(/^_|_$/, '') + ext
+}
+
 const input = 'w-full border border-warm-300 rounded-xl px-4 py-2.5 text-sm bg-warm-100 focus:outline-none focus:ring-2 focus:ring-clay-300 placeholder:text-warm-400'
 const lbl = 'block text-sm font-semibold text-warm-700 mb-1.5'
 const section = 'bg-warm-50 border border-warm-300 rounded-2xl p-6 space-y-4'
@@ -145,9 +151,16 @@ export function AdminProductEdit() {
 
     if (stlFolder) {
       if (newImageFile) {
+        const { data: existing } = await supabase.storage.from('3d_figuras').list(stlFolder)
+        const oldPngs = (existing ?? []).filter(f => f.name.toLowerCase().endsWith('.png'))
+        if (oldPngs.length > 0) {
+          await supabase.storage
+            .from('3d_figuras')
+            .remove(oldPngs.map(f => `${stlFolder}/${f.name}`))
+        }
         await supabase.storage
           .from('3d_figuras')
-          .upload(`${stlFolder}/${newImageFile.name}`, newImageFile, { upsert: true })
+          .upload(`${stlFolder}/preview.png`, newImageFile, { contentType: 'application/octet-stream' })
         setNewImageFile(null)
         setNewImagePreview(null)
       }
@@ -178,7 +191,7 @@ export function AdminProductEdit() {
   }
 
   return (
-    <div className="space-y-6 max-w-2xl">
+    <div className="space-y-6 max-w-2xl mx-auto">
       <div className="flex items-center gap-3">
         <Link to="/admin/productos" className="text-warm-500 hover:text-warm-700 transition-colors">
           <ArrowLeft size={18} />

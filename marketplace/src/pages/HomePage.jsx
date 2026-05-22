@@ -153,7 +153,9 @@ export function HomePage() {
                 <span className="text-2xl shrink-0">{config.emoji}</span>
                 <div className="min-w-0 flex-1">
                   <p className="font-display font-bold text-espresso text-sm leading-snug">{cat}</p>
-                  <p className="text-warm-400 text-xs mt-0.5">{categoryCount(cat)} productos</p>
+                  <p className="text-warm-400 text-xs mt-0.5">
+                    {loading ? '—' : `${categoryCount(cat)} productos`}
+                  </p>
                 </div>
                 <ArrowRight
                   size={14}

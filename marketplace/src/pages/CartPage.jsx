@@ -5,7 +5,24 @@ import { useProducts } from '../hooks/useProducts'
 import { formatCOP } from '../utils/format'
 import { StockBadge } from '../components/ui/StockBadge'
 import { useAuth } from '../context/AuthContext'
-import { categoryConfig } from '../components/product/CategoryIcon'
+import { CategoryIcon } from '../components/product/CategoryIcon'
+import { useProductImage } from '../hooks/useProductImage'
+
+function CartItemThumb({ product }) {
+  const imageUrl = useProductImage(product.stlFilename)
+  if (imageUrl) {
+    return (
+      <div className="w-16 h-16 rounded-xl bg-warm-100 shrink-0 flex items-center justify-center overflow-hidden">
+        <img src={imageUrl} alt={product.name} className="w-full h-full object-contain" />
+      </div>
+    )
+  }
+  return (
+    <div className="w-16 h-16 rounded-xl bg-warm-100 shrink-0 flex items-center justify-center">
+      <CategoryIcon category={product.category} size={36} />
+    </div>
+  )
+}
 
 export function CartPage() {
   const { items, removeItem, updateQuantity, clearCart } = useCart()
@@ -63,12 +80,9 @@ export function CartPage() {
         <div className="lg:col-span-2 space-y-3">
           {cartProducts.map(({ item, product }) => {
             if (!product) return null
-            const config = categoryConfig[product.category] ?? { bg: 'bg-warm-100', emoji: '📦' }
             return (
               <div key={item.productId} className="bg-warm-50 border border-warm-300 rounded-2xl p-4 flex gap-4 items-start">
-                <div className={`${config.bg} rounded-xl p-3 shrink-0 text-2xl`}>
-                  {config.emoji}
-                </div>
+                <CartItemThumb product={product} />
 
                 <div className="flex-1 min-w-0">
                   <Link

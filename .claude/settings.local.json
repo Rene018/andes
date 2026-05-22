@@ -31,7 +31,11 @@
       "Bash(ls -la \"c:\\\\Users\\\\rune0\\\\.claude\\\\plans\\\\\" 2>/dev/null || echo \"Plans directory not found\")",
       "Read(//c/Users/rune0/.claude/plans\" 2>/dev/**)",
       "Bash(npx supabase *)",
-      "Bash(npm ls *)"
+      "Bash(npm ls *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\src\" -Recurse -File)",
+      "Bash(Select-Object -ExpandProperty FullName)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\src\\\\pages\\\\admin\" -Recurse)",
+      "Bash(Select-Object -Property FullName)"
     ]
   }
 }

@@ -28,6 +28,12 @@ function toSlug(name) {
     .replace(/^_|_$/g, '')
 }
 
+function safeFilename(name) {
+  const ext = name.includes('.') ? name.slice(name.lastIndexOf('.')) : ''
+  const base = name.slice(0, name.length - ext.length)
+  return base.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-zA-Z0-9._-]/g, '_').replace(/_+/g, '_').replace(/^_|_$/, '') + ext
+}
+
 const input = 'w-full border border-warm-300 rounded-xl px-4 py-2.5 text-sm bg-warm-100 focus:outline-none focus:ring-2 focus:ring-clay-300 placeholder:text-warm-400'
 const lbl = 'block text-sm font-semibold text-warm-700 mb-1.5'
 const section = 'bg-warm-50 border border-warm-300 rounded-2xl p-6 space-y-4'
@@ -72,12 +78,22 @@ export function AdminProductNew() {
     })
   }
 
+  async function generateNextId() {
+    const { data } = await supabase.from('products').select('id')
+    const nums = (data ?? [])
+      .map(p => p.id?.match(/^RD-(\d+)$/))
+      .filter(Boolean)
+      .map(m => parseInt(m[1], 10))
+    const next = nums.length > 0 ? Math.max(...nums) + 1 : 1
+    return `RD-${String(next).padStart(3, '0')}`
+  }
+
   async function handleSubmit(e) {
     e.preventDefault()
     setSaving(true)
     setError(null)
 
-    const id = crypto.randomUUID()
+    const id = await generateNextId()
     const available = Number(form.available)
     const stlFolder = (stlFiles.length > 0 || imageFile) ? toSlug(form.name) : null
 
@@ -106,15 +122,22 @@ export function AdminProductNew() {
     }
 
     if (stlFolder) {
+      const { data: existing } = await supabase.storage.from('3d_figuras').list(stlFolder)
+      if (existing?.length > 0) {
+        await supabase.storage
+          .from('3d_figuras')
+          .remove(existing.map(f => `${stlFolder}/${f.name}`))
+      }
       if (imageFile) {
         await supabase.storage
           .from('3d_figuras')
-          .upload(`${stlFolder}/${imageFile.name}`, imageFile, { upsert: true })
+          .upload(`${stlFolder}/preview.png`, imageFile, { contentType: 'application/octet-stream' })
       }
       for (const file of stlFiles) {
+        const stlName = safeFilename(file.name)
         await supabase.storage
           .from('3d_figuras')
-          .upload(`${stlFolder}/${file.name}`, file, { upsert: true })
+          .upload(`${stlFolder}/${stlName}`, file)
       }
     }
 
@@ -122,7 +145,7 @@ export function AdminProductNew() {
   }
 
   return (
-    <div className="space-y-6 max-w-2xl">
+    <div className="space-y-6 max-w-2xl mx-auto">
       <div className="flex items-center gap-3">
         <Link to="/admin/productos" className="text-warm-500 hover:text-warm-700 transition-colors">
           <ArrowLeft size={18} />

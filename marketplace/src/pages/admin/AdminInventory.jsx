@@ -19,11 +19,17 @@ export function AdminInventory() {
     setRows(products.map(p => ({ ...p, editableAvailable: p.available })))
   }, [products])
 
+  function statusFromAvailable(n) {
+    if (n <= 0) return 'Sin Stock'
+    if (n <= 2) return 'Stock Bajo'
+    return 'Disponible'
+  }
+
   function updateAvailable(id, val) {
     setRows(prev =>
       prev.map(r =>
         r.id === id
-          ? { ...r, editableAvailable: val, status: val <= 2 ? 'Stock Bajo' : 'Disponible' }
+          ? { ...r, editableAvailable: val, status: statusFromAvailable(val) }
           : r
       )
     )
@@ -95,7 +101,6 @@ export function AdminInventory() {
                 <th className="text-left px-4 py-3 text-xs font-semibold text-warm-600 uppercase tracking-wide">Producto</th>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-warm-600 uppercase tracking-wide">Disponible</th>
                 <th className="text-left px-4 py-3 text-xs font-semibold text-warm-600 uppercase tracking-wide">Estado</th>
-                <th className="text-left px-4 py-3 text-xs font-semibold text-warm-600 uppercase tracking-wide">Modelo 3D</th>
                 <th className="px-4 py-3"></th>
               </tr>
             </thead>
@@ -115,21 +120,6 @@ export function AdminInventory() {
                   </td>
                   <td className="px-4 py-3">
                     <StockBadge status={row.status} />
-                  </td>
-                  <td className="px-4 py-3">
-                    <label className="flex items-center gap-1 cursor-pointer text-xs text-clay-500 hover:text-clay-600 transition-colors">
-                      <Upload size={12} />
-                      {uploading === row.id ? 'Subiendo...' : row.stlFilename ? 'Reemplazar' : 'Subir STL'}
-                      <input
-                        type="file"
-                        accept=".stl"
-                        className="hidden"
-                        onChange={e => {
-                          const file = e.target.files?.[0]
-                          if (file) handleStlUpload(row.id, file)
-                        }}
-                      />
-                    </label>
                   </td>
                   <td className="px-4 py-3">
                     <button
