@@ -62,7 +62,6 @@ Deno.serve(async (req: Request) => {
       failure: `${returnBaseUrl}/pedido/confirmacion`,
       pending: `${returnBaseUrl}/pedido/confirmacion`,
     },
-    auto_return: 'approved',
     statement_descriptor: 'ANDES 3D',
   }
 

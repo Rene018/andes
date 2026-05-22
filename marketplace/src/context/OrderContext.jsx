@@ -69,20 +69,12 @@ export function OrderProvider({ children }) {
     }))
     await supabase.from('order_items').insert(items)
 
-    // Descontar stock de cada producto
+    // Descontar stock de cada producto (función con SECURITY DEFINER para bypasear RLS)
     for (const item of order.items) {
-      const { data: prod } = await supabase
-        .from('products')
-        .select('available, reserved')
-        .eq('id', item.productId)
-        .single()
-
-      if (prod) {
-        await supabase.from('products').update({
-          available: Math.max(0, prod.available - item.quantity),
-          reserved: (prod.reserved ?? 0) + item.quantity,
-        }).eq('id', item.productId)
-      }
+      await supabase.rpc('decrement_product_stock', {
+        p_product_id: item.productId,
+        p_quantity: item.quantity,
+      })
     }
 
     await loadOrders()

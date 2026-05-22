@@ -14,9 +14,13 @@ import { OrderConfirmationPage } from './pages/OrderConfirmationPage'
 import { LoginPage } from './pages/auth/LoginPage'
 import { RegisterPage } from './pages/auth/RegisterPage'
 import { MyOrdersPage } from './pages/account/MyOrdersPage'
+import { ProfilePage } from './pages/account/ProfilePage'
 import { AdminDashboard } from './pages/admin/AdminDashboard'
 import { AdminInventory } from './pages/admin/AdminInventory'
 import { AdminOrders } from './pages/admin/AdminOrders'
+import { AdminProducts } from './pages/admin/AdminProducts'
+import { AdminProductNew } from './pages/admin/AdminProductNew'
+import { AdminProductEdit } from './pages/admin/AdminProductEdit'
 
 export default function App() {
   return (
@@ -36,6 +40,7 @@ export default function App() {
                 <Route path="/auth/login" element={<LoginPage />} />
                 <Route path="/auth/registro" element={<RegisterPage />} />
                 <Route path="/cuenta/pedidos" element={<MyOrdersPage />} />
+                <Route path="/cuenta/perfil" element={<ProfilePage />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Route>
 
@@ -43,6 +48,9 @@ export default function App() {
               <Route path="/admin" element={<AdminLayout />}>
                 <Route index element={<Navigate to="/admin/dashboard" replace />} />
                 <Route path="dashboard" element={<AdminDashboard />} />
+                <Route path="productos" element={<AdminProducts />} />
+                <Route path="productos/nuevo" element={<AdminProductNew />} />
+                <Route path="productos/:id" element={<AdminProductEdit />} />
                 <Route path="inventario" element={<AdminInventory />} />
                 <Route path="solicitudes" element={<AdminOrders />} />
               </Route>

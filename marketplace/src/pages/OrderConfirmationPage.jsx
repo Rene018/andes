@@ -43,15 +43,16 @@ export function OrderConfirmationPage() {
       return
     }
 
-    if (mpStatus === 'failure') {
+    if (mpStatus === 'pending' || mpStatus === 'in_process') {
       sessionStorage.removeItem(PENDING_KEY)
-      setPageStatus('failure')
+      setPageStatus('pending')
       return
     }
 
-    if (mpStatus === 'pending') {
+    if (mpStatus !== 'approved') {
+      // rejected, failure, cancelled, charged_back, etc.
       sessionStorage.removeItem(PENDING_KEY)
-      setPageStatus('pending')
+      setPageStatus('failure')
       return
     }
 

@@ -1,0 +1,10 @@
+services:
+  ngrok:
+    image: ngrok/ngrok:latest
+    command: http host.docker.internal:5173 --log=stdout
+    environment:
+      - NGROK_AUTHTOKEN=3CvHy6T3JCIZraioaN6hONjgZmm_rUaCTYYWMPHVyqXNCLnf
+    ports:
+      - "4040:4040"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"

@@ -62,12 +62,6 @@ export function HomePage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-clay-600/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-4xl mx-auto px-4 py-28 lg:py-36 text-center">
-          {/* Pill badge */}
-          <span className="inline-flex items-center gap-2 text-clay-400 text-xs font-semibold uppercase tracking-widest mb-8 border border-clay-800 rounded-full px-4 py-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-clay-400" />
-            Barranquilla · Colombia
-          </span>
-
           <h1 className="font-display font-extrabold text-white leading-[0.95] mb-6"
               style={{ fontSize: 'clamp(2.5rem, 7vw, 4.5rem)' }}>
             Recursos 3D<br />

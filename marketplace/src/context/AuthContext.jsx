@@ -39,12 +39,32 @@ export function AuthProvider({ children }) {
         id: data.id,
         fullName: data.full_name,
         customerType: data.customer_type,
-        institution: data.institution,
         phone: data.phone,
+        address: data.address,
+        city: data.city,
+        department: data.department,
         role: data.role,
       })
     }
     setLoading(false)
+  }
+
+  async function updateProfile(fields) {
+    const { user } = (await supabase.auth.getSession()).data.session ?? {}
+    if (!user) return { error: 'No autenticado' }
+
+    const { error } = await supabase.from('profiles').update({
+      full_name: fields.fullName,
+      customer_type: fields.customerType,
+      phone: fields.phone ?? null,
+      address: fields.address ?? null,
+      city: fields.city ?? null,
+      department: fields.department ?? null,
+    }).eq('id', user.id)
+
+    if (error) return { error: error.message }
+    setProfile(prev => ({ ...prev, ...fields }))
+    return { error: null }
   }
 
   async function signIn(email, password) {
@@ -82,6 +102,7 @@ export function AuthProvider({ children }) {
         signIn,
         signUp,
         signOut,
+        updateProfile,
       }}
     >
       {children}

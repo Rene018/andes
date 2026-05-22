@@ -6,11 +6,13 @@ import { useAuth } from '../../context/AuthContext'
 import { StarRating } from '../ui/StarRating'
 import { StockBadge } from '../ui/StockBadge'
 import { CategoryIcon, categoryConfig } from './CategoryIcon'
+import { useProductImage } from '../../hooks/useProductImage'
 
 export function ProductCard({ product }) {
   const { addItem } = useCart()
   const { isAdmin } = useAuth()
   const config = categoryConfig[product.category] ?? { bg: 'bg-zinc-100', text: 'text-zinc-600', emoji: '📦' }
+  const imageUrl = useProductImage(product.stlFilename)
 
   return (
     <div className="group bg-white rounded-2xl border border-warm-200 overflow-hidden hover:border-clay-300 hover:shadow-xl hover:shadow-clay-500/8 hover:-translate-y-1 transition-all duration-200 flex flex-col">
@@ -20,9 +22,18 @@ export function ProductCard({ product }) {
         to={`/productos/${product.id}`}
         className="relative flex justify-center items-center py-8 px-6 bg-warm-50 group-hover:bg-clay-50 transition-colors duration-200 overflow-hidden"
       >
-        {/* Círculo decorativo de fondo */}
-        <div className="absolute w-32 h-32 rounded-full bg-white/60 group-hover:bg-clay-100/40 transition-colors duration-200" />
-        <CategoryIcon category={product.category} size={80} className="relative z-10" />
+        {imageUrl ? (
+          <img
+            src={imageUrl}
+            alt={product.name}
+            className="relative z-10 w-36 h-36 object-contain drop-shadow-sm"
+          />
+        ) : (
+          <>
+            <div className="absolute w-32 h-32 rounded-full bg-white/60 group-hover:bg-clay-100/40 transition-colors duration-200" />
+            <CategoryIcon category={product.category} size={80} className="relative z-10" />
+          </>
+        )}
 
         {/* Badge de material — esquina superior derecha */}
         <span className="absolute top-3 right-3 text-[9px] font-bold uppercase tracking-widest text-warm-500 bg-white border border-warm-200 rounded px-1.5 py-0.5 group-hover:border-clay-200 group-hover:text-clay-600 transition-colors">

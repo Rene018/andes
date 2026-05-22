@@ -11,6 +11,7 @@ import { StockBadge } from '../components/ui/StockBadge'
 import { CategoryIcon } from '../components/product/CategoryIcon'
 import { ModelViewer } from '../components/viewer/ModelViewer'
 import { Spinner } from '../components/ui/Spinner'
+import { useProductFiles } from '../hooks/useProductFiles'
 
 const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL
 
@@ -28,6 +29,8 @@ export function ProductDetailPage() {
 
   const { product, loading } = useProduct(id)
   const { reviews, addReview } = useReviews(id)
+  const { files: stlFiles, loading: filesLoading } = useProductFiles(product?.stlFilename)
+  const [selectedFile, setSelectedFile] = useState(null)
 
   const avgRating = reviews.length > 0
     ? reviews.reduce((sum, r) => sum + r.avgRating, 0) / reviews.length
@@ -52,7 +55,10 @@ export function ProductDetailPage() {
     )
   }
 
-  const stlUrl = `${SUPABASE_URL}/storage/v1/object/public/3d_figuras/${product.stlFilename}`
+  const activeFile = selectedFile ?? stlFiles[0]
+  const stlUrl = activeFile
+    ? `${SUPABASE_URL}/storage/v1/object/public/3d_figuras/${product.stlFilename}/${activeFile.name}`
+    : null
   const cartItem = items.find(i => i.productId === product.id)
 
   function handleAddToCart() {
@@ -89,20 +95,44 @@ export function ProductDetailPage() {
           <ArrowLeft size={15} /> Volver al catálogo
         </Link>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {/* 3D Viewer */}
-          <div>
-            {SUPABASE_URL && SUPABASE_URL !== 'https://your-project.supabase.co' ? (
+          <div className="lg:col-span-2">
+            {stlUrl ? (
               <ModelViewer stlUrl={stlUrl} />
             ) : (
               <div
                 className="rounded-2xl bg-warm-50 border border-warm-300 flex items-center justify-center"
-                style={{ height: 380 }}
+                style={{ height: 520 }}
               >
-                <CategoryIcon category={product.category} size={160} />
+                {filesLoading ? <Spinner /> : <CategoryIcon category={product.category} size={160} />}
               </div>
             )}
-            <p className="text-xs text-warm-400 text-center mt-2 font-mono">{product.id} · {product.stlFilename}</p>
+
+            {/* Piece selector */}
+            {stlFiles.length > 1 && (
+              <div className="flex flex-wrap gap-1.5 mt-3">
+                {stlFiles.map((f, i) => (
+                  <button
+                    key={f.name}
+                    onClick={() => setSelectedFile(f)}
+                    className={`text-xs font-mono px-2.5 py-1 rounded-lg border transition-colors ${
+                      activeFile?.name === f.name
+                        ? 'border-clay-400 bg-clay-50 text-clay-600'
+                        : 'border-warm-300 text-warm-500 hover:border-clay-300 hover:text-clay-500'
+                    }`}
+                  >
+                    Pieza {i + 1}
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {activeFile && (
+              <p className="text-xs text-warm-400 text-center mt-2 font-mono">
+                {product.stlFilename} · {activeFile.name}
+              </p>
+            )}
           </div>
 
           {/* Product info */}

@@ -1,5 +1,5 @@
-import { Suspense, useRef, Component } from 'react'
-import { Canvas, useLoader, useFrame } from '@react-three/fiber'
+import { Suspense, Component } from 'react'
+import { Canvas, useLoader } from '@react-three/fiber'
 import { OrbitControls, Center, Environment } from '@react-three/drei'
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js'
 import { Box } from 'lucide-react'
@@ -7,17 +7,10 @@ import { Spinner } from '../ui/Spinner'
 
 function Model({ url }) {
   const geometry = useLoader(STLLoader, url)
-  const meshRef = useRef(null)
-
-  useFrame((_, delta) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.3
-    }
-  })
 
   return (
     <Center>
-      <mesh ref={meshRef} geometry={geometry}>
+      <mesh geometry={geometry}>
         <meshStandardMaterial color="#C0622A" roughness={0.5} metalness={0.1} />
       </mesh>
     </Center>
@@ -57,20 +50,23 @@ class ModelErrorBoundary extends Component {
   }
 }
 
-export function ModelViewer({ stlUrl, height = 380 }) {
+export function ModelViewer({ stlUrl, height = 520 }) {
   return (
     <ModelErrorBoundary fallback={<ErrorFallback height={height} />}>
       <div className="relative rounded-2xl overflow-hidden bg-warm-100 border border-warm-300" style={{ height }}>
         <Suspense fallback={<LoadingFallback />}>
           <Canvas
+            frameloop="demand"
             camera={{ position: [0, 0, 80], fov: 45 }}
+            gl={{ powerPreference: 'low-power', antialias: false, failIfMajorPerformanceCaveat: false }}
+            onContextLost={e => e.preventDefault()}
             style={{ width: '100%', height: '100%' }}
           >
             <ambientLight intensity={0.6} />
             <directionalLight position={[10, 10, 5]} intensity={1.2} />
             <directionalLight position={[-5, -5, -5]} intensity={0.3} />
             <Model url={stlUrl} />
-            <OrbitControls enablePan={false} minDistance={20} maxDistance={200} />
+            <OrbitControls enablePan={false} minDistance={20} maxDistance={600} />
             <Environment preset="city" />
           </Canvas>
         </Suspense>

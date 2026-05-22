@@ -19,7 +19,7 @@ export function OrderFormPage() {
     customerType: profile?.customerType ?? 'Docente',
     email: user?.email ?? '',
     phone: profile?.phone ?? '',
-    city: '',
+    city: profile?.city ?? '',
     notes: '',
   })
   const [loading, setLoading] = useState(false)

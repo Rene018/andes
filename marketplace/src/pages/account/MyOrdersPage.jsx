@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom'
 import { Package } from 'lucide-react'
+
+const TABS = [
+  { label: 'Mis pedidos', to: '/cuenta/pedidos' },
+  { label: 'Mi perfil', to: '/cuenta/perfil' },
+]
 import { useAuth } from '../../context/AuthContext'
 import { useOrders } from '../../context/OrderContext'
 import { formatCOP } from '../../utils/format'
@@ -20,10 +25,27 @@ export function MyOrdersPage() {
 
   return (
     <div className="max-w-4xl mx-auto px-4 py-10">
-      <div className="mb-8">
+      <div className="mb-6">
         <p className="text-clay-500 text-xs font-semibold uppercase tracking-widest mb-1.5">Mi cuenta</p>
         <h1 className="font-display text-3xl font-bold text-espresso">Mis pedidos</h1>
         <p className="text-warm-500 text-sm mt-1">{profile?.fullName ?? user?.email}</p>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex gap-1 mb-8 border-b border-warm-200">
+        {TABS.map(tab => (
+          <Link
+            key={tab.to}
+            to={tab.to}
+            className={`px-4 py-2 text-sm font-semibold rounded-t-lg transition-colors ${
+              tab.to === '/cuenta/pedidos'
+                ? 'text-clay-600 border-b-2 border-clay-500 -mb-px bg-white'
+                : 'text-warm-500 hover:text-espresso'
+            }`}
+          >
+            {tab.label}
+          </Link>
+        ))}
       </div>
 
       {myOrders.length === 0 ? (
