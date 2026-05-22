@@ -1,0 +1,37 @@
+ESTADOS DE SOLICITUDES DE PRODUCCION - ANDES,,,,,,,
+Seguimiento de pedidos de material didactico y de accesibilidad por institucion,,,,,,,
+ID Solicitud,Institucion Solicitante,Recurso Solicitado,Cantidad,Fecha Solicitud,Responsable,Prioridad,Estado
+SOL-001,Escuela Normal Superior Barranquilla,Abecedario Braille Modular,3,2026-04-10,Ana Reyes,Alta,Entregada
+SOL-002,Instituto para Ciegos del Caribe,Teclado Braille Portatil,5,2026-04-15,Luis Gomez,Alta,Entregada
+SOL-003,Colegio Distrital Las Nieves,Figuras Geometricas Tactiles,4,2026-04-20,Maria Torres,Media,Entregada
+SOL-004,Fundacion Manos Abiertas,Tablero Comunicacion AAC,2,2026-04-28,Pedro Salas,Alta,Empaque y Transporte
+SOL-005,Colegio Fe y Alegria No. 1,Fracciones Montessori,6,2026-05-02,Clara Pinto,Media,Empaque y Transporte
+SOL-006,IED Simon Bolivar,Mapa de Colombia Relieve,3,2026-05-05,Ana Reyes,Media,Revision de Calidad
+SOL-007,Hogar Infantil Comunitario El Prado,Agarre Lapiz Adaptado,10,2026-05-07,Luis Gomez,Alta,Revision de Calidad
+SOL-008,Escuela Normal Superior Barranquilla,Atomos y Moleculas Kit,2,2026-05-10,Maria Torres,Media,En Produccion
+SOL-009,Instituto para Ciegos del Caribe,Regla Tactil con Braille,8,2026-05-12,Pedro Salas,Alta,En Produccion
+SOL-010,Colegio Distrital Las Nieves,Rompecabezas Mapa Mundi,5,2026-05-14,Clara Pinto,Baja,En Produccion
+SOL-011,Fundacion Manos Abiertas,Letras Mayusculas Tactiles,3,2026-05-16,Ana Reyes,Media,Recibida
+SOL-012,IED Simon Bolivar,Reloj Didactico Desmontable,4,2026-05-17,Luis Gomez,Baja,Recibida
+SOL-013,Colegio Fe y Alegria No. 1,Soporte Libro Manos Libres,2,2026-05-18,Maria Torres,Media,Recibida
+SOL-014,Hogar Infantil Comunitario El Prado,Tablero de Abaco,3,2026-05-19,Pedro Salas,Alta,Recibida
+SOL-015,IED Simon Bolivar,Protractor Tactil,6,2026-05-19,Clara Pinto,Baja,Recibida
+SOL-016,Colegio San Jose de la Salle,Figura Anatomica Corazon Humano,4,2026-05-15,Ana Reyes,Alta,En Produccion
+SOL-017,Universidad del Atlantico,Figura Sistema Solar Escala,2,2026-05-16,Luis Gomez,Media,En Produccion
+SOL-018,,Figura Celula Animal Desmontable,3,2026-05-16,Maria Torres,Media,Recibida
+SOL-019,Fundacion Manos Abiertas,Accesorio Abrepuertas de Muneca,15,2026-05-17,Pedro Salas,Alta,Recibida
+SOL-020,Hogar Gerontologico El Carmen,Accesorio Soporte Tablet Cama,8,2026-05-17,Clara Pinto,Alta,Recibida
+SOL-021,IED Concentracion Cevillar,Figura Piramide de Giza Seccionada,5,2026-05-18,Ana Reyes,Baja,Recibida
+SOL-022,Instituto para Ciegos del Caribe,Accesorio Sujetador de Paginas,20,2026-05-18,Luis Gomez,Alta,Recibida
+SOL-023,Colegio Distrital Las Americas,Figura Volcan en Corte,6,2026-05-19,Maria Torres,Media,Recibida
+SOL-024,Escuela Normal Superior Barranquilla,Figura Esqueleto Humano Articulado,2,2026-05-19,Pedro Salas,Alta,Recibida
+SOL-025,Fundacion Rehabilitar Caribe,Accesorio Silla de Ruedas Portavasos,12,2026-05-19,Clara Pinto,Media,Recibida
+,,,,,,,
+,,,,,,,
+RESUMEN POR ESTADO,,,,,,,
+Estado,Cantidad,,,,,,
+Recibida,13,,,,,,
+En Produccion,5,,,,,,
+Revision de Calidad,2,,,,,,
+Empaque y Transporte,2,,,,,,
+Entregada,3,,,,,,

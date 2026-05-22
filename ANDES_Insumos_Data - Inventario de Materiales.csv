@@ -1,0 +1,20 @@
+INVENTARIO DE MATERIALES E INSUMOS - ANDES,,,,,,,,
+Control de stock de filamentos y materiales para produccion de recursos didacticos,,,,,,,,
+ID Material,Nombre del Material,Tipo,Color,Stock (kg),Stock Minimo (kg),Stock Maximo (kg),Proveedor,Estado
+MAT-001,Filamento PLA Blanco,PLA,Blanco,"4,2","1,0","10,0",Filamentos3D Colombia,OK
+MAT-002,Filamento PLA Amarillo,PLA,Amarillo,"2,8","1,0","8,0",Filamentos3D Colombia,OK
+MAT-003,Filamento PLA Rojo,PLA,Rojo,"1,5","1,0","8,0",PrintMaster Bogota,OK
+MAT-004,Filamento PLA Azul,PLA,Azul,"3,0","1,0","8,0",Filamentos3D Colombia,OK
+MAT-005,Filamento PLA Verde,PLA,Verde,"0,7","1,0","6,0",PrintMaster Bogota,Stock Bajo
+MAT-006,Filamento PLA Negro,PLA,Negro,"5,0","1,5","10,0",Filamentos3D Colombia,OK
+MAT-007,Filamento PLA+ Natural,PLA+,Natural,"2,1","1,0","8,0",3DXTech Colombia,OK
+MAT-008,Filamento PETG Transparente,PETG,Transparente,"1,8","1,0","6,0",3DXTech Colombia,OK
+MAT-009,Filamento PETG Blanco,PETG,Blanco,"2,5","1,0","6,0",3DXTech Colombia,OK
+MAT-010,Filamento TPU Flexible 95A,TPU,Negro,"1,2","0,5","4,0",NinjaTek Colombia,OK
+MAT-011,Filamento TPU Flexible 95A,TPU,Blanco,"0,4","0,5","4,0",NinjaTek Colombia,Stock Bajo
+MAT-012,Resina LCD Standard,Resina,Gris,"0,8","0,5","3,0",Anycubic Colombia,OK
+MAT-013,Filamento PLA Azul Cielo,PLA,Azul Cielo,"1,5","1,0","6,0",Filamentos3D Colombia,OK
+MAT-014,Filamento PETG Gris,PETG,Gris,"2,0","1,0","6,0",3DXTech Colombia,OK
+MAT-015,Filamento ABS Negro,ABS,Negro,"1,0","1,0","5,0",PrintMaster Bogota,OK
+MAT-016,Filamento PLA+ Naranja,PLA+,Naranja,"0,6","1,0","5,0",Filamentos3D Colombia,Stock Bajo
+,TOTAL STOCK (kg),,,"31,1",,,,

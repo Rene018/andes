@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  /* --- Tipografía --- */
+  --font-display: 'Syne', system-ui, sans-serif;
+  --font-sans: 'Outfit', system-ui, -apple-system, sans-serif;
+
+  /* --- Clay → AZUL (color principal de marca) --- */
+  --color-clay-50:  #EFF6FF;
+  --color-clay-100: #DBEAFE;
+  --color-clay-200: #BFDBFE;
+  --color-clay-300: #93C5FD;
+  --color-clay-400: #60A5FA;
+  --color-clay-500: #2563EB;
+  --color-clay-600: #1D4ED8;
+  --color-clay-700: #1E40AF;
+  --color-clay-800: #1E3A8A;
+  --color-clay-900: #172554;
+
+  /* --- Sage → ESMERALDA (disponible / éxito) --- */
+  --color-sage-50:  #ECFDF5;
+  --color-sage-100: #D1FAE5;
+  --color-sage-200: #A7F3D0;
+  --color-sage-300: #6EE7B7;
+  --color-sage-400: #34D399;
+  --color-sage-500: #10B981;
+  --color-sage-600: #059669;
+
+  /* --- Espresso → AZUL MARINO MUY OSCURO (superficies dark) --- */
+  --color-espresso:       #0F172A;
+  --color-espresso-mid:   #1E293B;
+  --color-espresso-light: #334155;
+
+  /* --- Warm → ZINC NEUTRO (fondos, bordes, texto) --- */
+  --color-warm-50:  #FAFAFA;
+  --color-warm-100: #F4F4F5;
+  --color-warm-200: #E4E4E7;
+  --color-warm-300: #D4D4D8;
+  --color-warm-400: #A1A1AA;
+  --color-warm-500: #71717A;
+  --color-warm-600: #52525B;
+  --color-warm-700: #3F3F46;
+  --color-warm-800: #27272A;
+  --color-warm-900: #18181B;
+
+  /* --- Gold → AMBER (alertas, stock bajo) --- */
+  --color-gold-400: #FBBF24;
+  --color-gold-500: #F59E0B;
+  --color-gold-600: #D97706;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAFAFA;
+    color: #18181B;
+    @apply antialiased;
+  }
+}
+
+/* Cuadrícula técnica para secciones oscuras */
+.tech-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}

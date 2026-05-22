@@ -1,0 +1,18 @@
+export const materials = [
+  { id: 'MAT-001', name: 'Filamento PLA Blanco', type: 'PLA', color: 'Blanco', stock: 4.2, minStock: 1.0, maxStock: 10.0, supplier: 'Filamentos3D Colombia', status: 'OK' },
+  { id: 'MAT-002', name: 'Filamento PLA Amarillo', type: 'PLA', color: 'Amarillo', stock: 2.8, minStock: 1.0, maxStock: 8.0, supplier: 'Filamentos3D Colombia', status: 'OK' },
+  { id: 'MAT-003', name: 'Filamento PLA Rojo', type: 'PLA', color: 'Rojo', stock: 1.5, minStock: 1.0, maxStock: 8.0, supplier: 'PrintMaster Bogota', status: 'OK' },
+  { id: 'MAT-004', name: 'Filamento PLA Azul', type: 'PLA', color: 'Azul', stock: 3.0, minStock: 1.0, maxStock: 8.0, supplier: 'Filamentos3D Colombia', status: 'OK' },
+  { id: 'MAT-005', name: 'Filamento PLA Verde', type: 'PLA', color: 'Verde', stock: 0.7, minStock: 1.0, maxStock: 6.0, supplier: 'PrintMaster Bogota', status: 'Stock Bajo' },
+  { id: 'MAT-006', name: 'Filamento PLA Negro', type: 'PLA', color: 'Negro', stock: 5.0, minStock: 1.5, maxStock: 10.0, supplier: 'Filamentos3D Colombia', status: 'OK' },
+  { id: 'MAT-007', name: 'Filamento PLA+ Natural', type: 'PLA+', color: 'Natural', stock: 2.1, minStock: 1.0, maxStock: 8.0, supplier: '3DXTech Colombia', status: 'OK' },
+  { id: 'MAT-008', name: 'Filamento PETG Transparente', type: 'PETG', color: 'Transparente', stock: 1.8, minStock: 1.0, maxStock: 6.0, supplier: '3DXTech Colombia', status: 'OK' },
+  { id: 'MAT-009', name: 'Filamento PETG Blanco', type: 'PETG', color: 'Blanco', stock: 2.5, minStock: 1.0, maxStock: 6.0, supplier: '3DXTech Colombia', status: 'OK' },
+  { id: 'MAT-010', name: 'Filamento TPU Flexible 95A Negro', type: 'TPU', color: 'Negro', stock: 1.2, minStock: 0.5, maxStock: 4.0, supplier: 'NinjaTek Colombia', status: 'OK' },
+  { id: 'MAT-011', name: 'Filamento TPU Flexible 95A Blanco', type: 'TPU', color: 'Blanco', stock: 0.4, minStock: 0.5, maxStock: 4.0, supplier: 'NinjaTek Colombia', status: 'Stock Bajo' },
+  { id: 'MAT-012', name: 'Resina LCD Standard', type: 'Resina', color: 'Gris', stock: 0.8, minStock: 0.5, maxStock: 3.0, supplier: 'Anycubic Colombia', status: 'OK' },
+  { id: 'MAT-013', name: 'Filamento PLA Azul Cielo', type: 'PLA', color: 'Azul Cielo', stock: 1.5, minStock: 1.0, maxStock: 6.0, supplier: 'Filamentos3D Colombia', status: 'OK' },
+  { id: 'MAT-014', name: 'Filamento PETG Gris', type: 'PETG', color: 'Gris', stock: 2.0, minStock: 1.0, maxStock: 6.0, supplier: '3DXTech Colombia', status: 'OK' },
+  { id: 'MAT-015', name: 'Filamento ABS Negro', type: 'ABS', color: 'Negro', stock: 1.0, minStock: 1.0, maxStock: 5.0, supplier: 'PrintMaster Bogota', status: 'OK' },
+  { id: 'MAT-016', name: 'Filamento PLA+ Naranja', type: 'PLA+', color: 'Naranja', stock: 0.6, minStock: 1.0, maxStock: 5.0, supplier: 'Filamentos3D Colombia', status: 'Stock Bajo' },
+]

@@ -1,0 +1,28 @@
+CATALOGO DE RECURSOS DIDACTICOS Y DE ACCESIBILIDAD 3D - ANDES,,,,,,,
+Inventario centralizado de materiales imprimibles para uso educativo e inclusivo,,,,,,,
+ID Recurso,Nombre del Recurso,Descripcion,Material Recomendado,Costo Estimado (COP),Categoria,Poblacion Objetivo,Archivo STL
+RD-001,Abecedario Braille Modular,"Letras del alfabeto en relieve con sistema braille integrado, piezas individuales ensamblables",PLA,$4.500,Accesibilidad Visual,Personas con discapacidad visual,abecedario_braille_v2.stl
+RD-002,Figuras Geometricas Tactiles,"Set de 10 figuras geometricas con textura diferenciada por forma, para ensenanza tactil",TPU,$8.000,Material Didactico,Educacion primaria / baja vision,geometrias_tactiles.stl
+RD-003,Mapa de Colombia Relieve,"Mapa fisico de Colombia con departamentos en relieve, escala 1:2.500.000",PLA+,$22.000,Material Didactico,Educacion basica y media,mapa_colombia_relieve.stl
+RD-004,Teclado Braille Portatil,"Dispositivo de practica de escritura braille de 6 puntos, compatible con papel normal",PETG,$35.000,Accesibilidad Visual,Personas con discapacidad visual,teclado_braille_v3.stl
+RD-005,Atomos y Moleculas Kit,"Esferas y conectores para armar modelos moleculares, 60 piezas. Quimica basica y media",PLA,$18.000,Material Didactico,Educacion media,kit_moleculas.stl
+RD-006,Tablero Comunicacion AAC,Panel de comunicacion aumentativa y alternativa con pictogramas imprimibles en relieve,PLA+,$28.000,Comunicacion Aumentativa,Personas con TEA / comunicacion limitada,tablero_aac.stl
+RD-007,Rompecabezas Mapa Mundi,"Planisferio desmontable por continentes, imprimible en piezas, coloreables",PLA,$14.000,Material Didactico,Educacion primaria,mapa_mundi_puzzle.stl
+RD-008,Regla Tactil con Braille,Regla de 30 cm con marcas en relieve y equivalentes en braille cada 5 mm,PETG,$6.000,Accesibilidad Visual,Personas con discapacidad visual,regla_tactil.stl
+RD-009,Fracciones Montessori,"Circulos fraccionarios de 1/1 a 1/10, con ranura de ensamble y soporte base",PLA,$12.000,Material Didactico,Educacion primaria,fracciones_montessori.stl
+RD-010,Agarre Lapiz Adaptado,"Adaptador ergonomico de lapiz para personas con dificultad motriz fina, 3 tallas",TPU,$3.500,Accesibilidad Motriz,Personas con discapacidad motriz,agarre_lapiz_adaptado.stl
+RD-011,Letras Mayusculas Tactiles,Juego de 27 letras mayusculas con relieve en tres niveles de contraste tactil,PLA,$9.000,Accesibilidad Visual,Educacion inicial / baja vision,letras_mayusculas_tactil.stl
+RD-012,Reloj Didactico Desmontable,Reloj de manecillas con piezas numeradas desmontables para ensenanza del tiempo,PLA+,$11.000,Material Didactico,Educacion primaria,reloj_didactico.stl
+RD-013,Protractor Tactil,"Transportador de angulos con marcas en relieve cada 10 grados, diametro 15 cm",PETG,$7.500,Accesibilidad Visual,Educacion media,protractor_tactil.stl
+RD-014,Tablero de Abaco,"Abaco horizontal de 10 columnas imprimible, cuentas deslizables por riel",PLA,$15.000,Material Didactico,Educacion primaria,abaco_10col.stl
+RD-015,Soporte Libro Manos Libres,"Atril de escritorio para libros de texto, ajustable entre 15 y 45 grados",PETG,$20.000,Accesibilidad Motriz,Personas con discapacidad motriz,soporte_libro.stl
+RD-016,Figura Anatomica Corazon Humano,"Modelo anatomico del corazon seccionado en dos mitades ensamblables, escala real, ideal para ciencias naturales",PLA+,$38.000,Figuras Didacticas,Educacion media / Ciencias,corazon_anatomico_v2.stl
+RD-017,Figura Sistema Solar Escala,"Set de 8 planetas del sistema solar a escala relativa, con soporte de anillo para exhibicion",PLA,$55.000,Figuras Didacticas,Educacion primaria y media,sistema_solar_set.stl
+RD-018,Figura Celula Animal Desmontable,Celula animal en corte transversal con 9 organulos extraibles identificados por color,PLA+,$42.000,Figuras Didacticas,Educacion media / Biologia,celula_animal_desmontable.stl
+RD-019,Figura Esqueleto Humano Articulado,"Esqueleto humano a escala 1:6 con articulaciones moviles en hombros, codos, caderas y rodillas",PETG,$75.000,Figuras Didacticas,Educacion basica y media,esqueleto_articulado_1_6.stl
+RD-020,Figura Volcán en Corte,"Seccion transversal de un volcan con camara magmatica, chimenea y capas geologicas diferenciadas",PLA,$32.000,Figuras Didacticas,Educacion primaria / Ciencias,volcan_seccion.stl
+RD-021,Accesorio Silla de Ruedas Portavasos,"Portavasos con clip de sujecion universal para sillas de ruedas estandar, diametro ajustable",PETG,$14.000,Accesorios de Accesibilidad,Personas usuarias de silla de ruedas,portavasos_silla_ruedas.stl
+RD-022,Accesorio Soporte Tablet Cama,"Brazo articulado con base de clip para cama o mesa, soporta tablets de 7 a 12 pulgadas",PETG,$28.000,Accesorios de Accesibilidad,Personas con movilidad reducida,soporte_tablet_cama.stl
+RD-023,Accesorio Abrepuertas de Muneca,"Gancho ergonomico para abrir palancas y manijas sin usar los dedos, apto para todas las edades",TPU,$9.000,Accesorios de Accesibilidad,Personas con discapacidad motriz,abrepuertas_muneca.stl
+RD-024,Figura Piramide de Giza Seccionada,"Replica de la Gran Piramide con seccion interior que muestra camara del rey, pozos y galeria",PLA,$29.000,Figuras Didacticas,Educacion basica / Historia,piramide_giza_seccion.stl
+RD-025,Accesorio Sujetador de Paginas,"Clip adaptado para pasar paginas de libros con una sola mano, compatible con todos los formatos",TPU,$7.500,Accesorios de Accesibilidad,Personas con discapacidad motriz,sujetador_paginas.stl

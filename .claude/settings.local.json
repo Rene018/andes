@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\" -Recurse -Force)",
+      "Bash(Select-Object FullName, Length)",
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(npm run *)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\src\" -Recurse -Directory)",
+      "Bash(Select-Object FullName)",
+      "Bash(cd /c/Users/rune0/OneDrive/Desktop/andes/marketplace && find . -name \"*.ts\" -o -name \"*.tsx\" | head -50)",
+      "Read(//c/c/Users/rune0/OneDrive/Desktop/andes/**)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\vite.config.ts\" -Force)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\tsconfig.json\" -Force)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\tsconfig.app.json\" -Force)",
+      "Bash(Remove-Item \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\tsconfig.node.json\" -Force)",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\src\\\\hooks\")",
+      "Bash(Out-Null)",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\scripts\")",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\" -Recurse -Force)",
+      "Bash(Sort-Object FullName)",
+      "Bash(Format-Table -AutoSize)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\marketplace\\\\src\" -Recurse -Directory)",
+      "Bash(Select-Object -First 30)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\" -Recurse -Name)",
+      "Bash(ls -la \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\\\\\" 2>/dev/null | head -30)",
+      "Read(//c/Users/rune0/OneDrive/Desktop/andes\" 2>/dev/**)",
+      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\rune0\\\\OneDrive\\\\Desktop\\\\andes\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(ls -la \"c:\\\\Users\\\\rune0\\\\.claude\\\\plans\\\\\" 2>/dev/null || echo \"Plans directory not found\")",
+      "Read(//c/Users/rune0/.claude/plans\" 2>/dev/**)",
+      "Bash(npx supabase *)",
+      "Bash(npm ls *)"
+    ]
+  }
+}

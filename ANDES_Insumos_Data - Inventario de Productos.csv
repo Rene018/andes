@@ -1,0 +1,29 @@
+INVENTARIO DE PRODUCTOS TERMINADOS - ANDES,,,,,,,,
+"Control de unidades producidas, disponibles y entregadas por recurso didactico",,,,,,,,
+ID Recurso,Nombre del Producto,Categoria,Unidades Producidas,Unidades Entregadas,Unidades Disponibles,En Produccion,Reservadas,Estado
+RD-001,Abecedario Braille Modular,Accesibilidad Visual,45,38,5,3,2,Disponible
+RD-002,Figuras Geometricas Tactiles,Material Didactico,30,22,6,4,2,Disponible
+RD-003,Mapa de Colombia Relieve,Material Didactico,18,12,5,2,1,Disponible
+RD-004,Teclado Braille Portatil,Accesibilidad Visual,22,18,2,5,2,Stock Bajo
+RD-005,Atomos y Moleculas Kit,Material Didactico,16,10,6,2,0,Disponible
+RD-006,Tablero Comunicacion AAC,Comunicacion Aumentativa,12,9,2,2,1,Stock Bajo
+RD-007,Rompecabezas Mapa Mundi,Material Didactico,25,20,3,3,2,Stock Bajo
+RD-008,Regla Tactil con Braille,Accesibilidad Visual,60,52,4,8,4,Disponible
+RD-009,Fracciones Montessori,Material Didactico,28,22,4,4,2,Disponible
+RD-010,Agarre Lapiz Adaptado,Accesibilidad Motriz,80,68,7,10,5,Disponible
+RD-011,Letras Mayusculas Tactiles,Accesibilidad Visual,20,14,5,3,1,Disponible
+RD-012,Reloj Didactico Desmontable,Material Didactico,15,10,4,2,1,Disponible
+RD-013,Protractor Tactil,Accesibilidad Visual,18,14,3,2,1,Stock Bajo
+RD-014,Tablero de Abaco,Material Didactico,22,16,5,3,1,Disponible
+RD-015,Soporte Libro Manos Libres,Accesibilidad Motriz,14,10,3,2,1,Stock Bajo
+RD-016,Figura Anatomica Corazon Humano,Figuras Didacticas,10,6,2,4,2,Stock Bajo
+RD-017,Figura Sistema Solar Escala,Figuras Didacticas,8,4,3,2,1,Stock Bajo
+RD-018,Figura Celula Animal Desmontable,Figuras Didacticas,10,6,2,3,2,Stock Bajo
+RD-019,Figura Esqueleto Humano Articulado,Figuras Didacticas,6,2,3,2,1,Stock Bajo
+RD-020,Figura Volcan en Corte,Figuras Didacticas,12,8,3,3,1,Stock Bajo
+RD-021,Accesorio Silla de Ruedas Portavasos,Accesorios de Accesibilidad,20,12,5,6,3,Disponible
+RD-022,Accesorio Soporte Tablet Cama,Accesorios de Accesibilidad,14,8,4,4,2,Disponible
+RD-023,Accesorio Abrepuertas de Muneca,Accesorios de Accesibilidad,50,38,8,10,4,Disponible
+RD-024,Figura Piramide de Giza Seccionada,Figuras Didacticas,10,6,3,2,1,Stock Bajo
+RD-025,Accesorio Sujetador de Paginas,Accesorios de Accesibilidad,60,48,7,12,5,Disponible
+,TOTALES,,625,473,104,103,48,
